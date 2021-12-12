@@ -14,7 +14,7 @@ const App= () => {
   return (
    
       <View>
-        <Text>Hello Be grow</Text>
+        <Text>Hello Be grow some changerss</Text>
       </View>
       
    
