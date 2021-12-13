@@ -5,6 +5,7 @@ import {
   Text, View
 } from 'react-native';
 
+import AppNavContainer from './src/navigation/index'
 
 
 
@@ -14,7 +15,7 @@ const App= () => {
   return (
    
       <View>
-        <Text>Hello Be grow some changerss</Text>
+        <AppNavContainer/>
       </View>
       
    
