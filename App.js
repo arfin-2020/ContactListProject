@@ -1,4 +1,5 @@
 
+import 'react-native-gesture-handler';
 import React from 'react';
 import {
   StyleSheet,
@@ -13,13 +14,9 @@ const App= () => {
   
 
   return (
-   
-      <View>
-        <AppNavContainer/>
-      </View>
-      
-   
-  );
+      <AppNavContainer>
+      </AppNavContainer>
+  )
 };
 
 const styles = StyleSheet.create({
