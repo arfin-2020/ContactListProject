@@ -1,12 +1,12 @@
 
-import 'react-native-gesture-handler';
 import React from 'react';
 import {
-  StyleSheet,
-  Text, View
+  StyleSheet
 } from 'react-native';
+import 'react-native-gesture-handler';
+import GlobalProvider from './src/context/Provider';
+import AppNavContainer from './src/navigation/index';
 
-import AppNavContainer from './src/navigation/index'
 
 
 
@@ -14,8 +14,9 @@ const App= () => {
   
 
   return (
-      <AppNavContainer>
-      </AppNavContainer>
+      
+      <GlobalProvider><AppNavContainer/></GlobalProvider>
+     
   )
 };
 
