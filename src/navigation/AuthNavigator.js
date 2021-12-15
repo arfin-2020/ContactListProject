@@ -13,7 +13,7 @@ import SignUp from '../Screen/Register';
 const AuthNavigator = () =>{
     const AuthStack = createStackNavigator();
     return(
-        <AuthStack.Navigator>
+        <AuthStack.Navigator screenOptions={{headerShown: false}}>
             <AuthStack.Screen name={LOGIN} component={Login}/>
             <AuthStack.Screen name={REGISTER} component={SignUp}/>
         </AuthStack.Navigator>

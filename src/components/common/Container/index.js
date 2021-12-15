@@ -7,7 +7,7 @@ import styles from './styles';
 const Container = ({children}) =>{
     return(
         <ScrollView>
-            <View style={styles.wapper}>{children}</View>
+            <View style={[styles.wapper]}>{children}</View>
         </ScrollView>
     )
 }
