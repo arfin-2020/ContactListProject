@@ -6,12 +6,6 @@ import Contacts from '../Screen/Contacts';
 import CreateContact from '../Screen/CreateContact';
 import Settings from '../Screen/Settings';
 
-
-
-
-
-
-
 const HomeNavigator = () =>{
     const HomeStack = createStackNavigator();
     return(
