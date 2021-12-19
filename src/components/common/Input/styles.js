@@ -2,9 +2,7 @@ import { StyleSheet } from "react-native";
 import colors from "../../../assets/themes/colors";
 
 export default StyleSheet.create({
-  inputContainer:{
-    paddingVertical: 12,
-  },
+  
       wrapper:{
           height: 42,
           marginTop:5,
@@ -13,6 +11,9 @@ export default StyleSheet.create({
           paddingHorizontal: 5,
           
          
+      },
+      inputContainer:{
+        paddingVertical: 12,
       },
       input:{
         flex:1,

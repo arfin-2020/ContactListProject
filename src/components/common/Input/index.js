@@ -3,7 +3,7 @@ import { Text, TextInput, View } from 'react-native';
 import colors from '../../../assets/themes/colors';
 import styles from './styles';
 
-const Input = ({ label, onChangeText, value, style, icon, iconPosition, error, placeholder }) => {
+const Input = ({ label, onChangeText, value, style, icon, iconPosition, error, placeholder, ...props }) => {
 //    let dynamicDirection;
 //         if(icon && iconPosition){
 //             if(iconPosition==='left'){
@@ -47,6 +47,7 @@ const Input = ({ label, onChangeText, value, style, icon, iconPosition, error, p
                     placeholder={placeholder}
                     onFocus={()=>setFocus(true)}
                     onBlur={()=>setFocus(false)}
+                    {...props}
                 />
             </View>
             {error && <Text style={styles.error}>{error}</Text>}

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text } from 'react-native';
 import Container from '../../components/common/Container';
+import CustomeButton from '../../components/common/CustomeButton';
 import Input from '../../components/common/Input';
 
 
@@ -9,7 +9,7 @@ const Login = () => {
     console.log(text)
     return (
         <Container>
-            <Text>Hi from Login{text}</Text>
+          
             <Input
                 style
                 label="Username"
@@ -30,6 +30,10 @@ const Login = () => {
                 // placeholder='password'
                 // error={"This field is require"}
             />
+            <CustomeButton secondary title='Submit' loading={true} disabled={true}/>
+            <CustomeButton secondary title='Click me'/>
+            <CustomeButton primary title='Submit' loading={true} disabled={true}/>
+            <CustomeButton danger title='Delete' />
         </Container>
     );
 };
