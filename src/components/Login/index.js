@@ -1,6 +1,6 @@
-import React from 'react';
-import { Image, View, Text, TouchableOpacity} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { REGISTER } from '../../context/routeName';
 import Container from "../common/Container";
 // import styles from '../common/Container/styles';
@@ -37,6 +37,7 @@ const LoginComponent = () => {
             <CustomeButton secondary loading={true} title='Click me' />
             <CustomeButton primary title='Submit' loading={true} disabled={true} />
             <CustomeButton danger title='Delete' /> */}
+            
             <View style={styles.imageContainer}>
                 <Image
                     source={require('../../assets/images/logo.png')}
