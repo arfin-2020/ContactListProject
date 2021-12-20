@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import RegisterComponent from '../../components/Register';
 import envs from '../../config/env';
+import axios from '../../helpers/axiosInterceptor';
 
 const SignUp = () =>{
      const [form, setForm] = useState({});
@@ -9,6 +10,13 @@ const SignUp = () =>{
      
      console.log('Backend url-----', DEV_BACKEND_URL);
      console.log('__DEV__-----', __DEV__);
+
+    // React.useEffect(()=>{
+    //     axiosInstance.post('api/contacts/').catch((error)=>{
+    //         console.log('error', error.response);
+    //     });
+    // },[]);
+
      const onChange = ({name, value}) =>{
          
             setForm({...form,[name]: value});
@@ -65,7 +73,13 @@ const SignUp = () =>{
                 return {...prev, password: 'Please enter password field.'}
             })
         }
-         console.log('form---------', form);
+        //  console.log('form---------', form);
+         if(Object.values(form).length === 5 &&
+            Object.values(form).every((item)=>item.trim()) &&
+            Object.values(errors).every((item)=>!item)
+         ){
+                console.log('111',111);
+         }
         
      }
 
