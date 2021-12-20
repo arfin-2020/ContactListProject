@@ -25,12 +25,13 @@ const Input = ({ label, onChangeText, value, style, icon, iconPosition, error, p
         }
     }
     const dynamicBorderColor = () =>{
+        if(error){
+            return colors.danger;
+        }
         if(focus){
             return colors.primary
         }
-       else if(error){
-            return colors.danger;
-        }
+       
         else return colors.grey;
     }
     return (

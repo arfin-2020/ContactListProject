@@ -1,19 +1,36 @@
 import React, { useState } from 'react';
 import RegisterComponent from '../../components/Register';
-
+import envs from '../../config/env';
 
 const SignUp = () =>{
      const [form, setForm] = useState({});
      const [errors, setErrors] = useState({});
-
+     const {DEV_BACKEND_URL} = envs;
+     
+     console.log('Backend url-----', DEV_BACKEND_URL);
+     console.log('__DEV__-----', __DEV__);
      const onChange = ({name, value}) =>{
          
             setForm({...form,[name]: value});
 
             if(value !==''){
-                setErrors((prev)=>{
-                    return {...prev, [name]:null}
-                })
+                if(name === 'password'){
+                    if(value.length < 6){
+                        setErrors((prev) =>{
+                            return{...prev, [name]: 'This field needed 6 Character'}
+                        })
+                    }
+                    else{
+                        setErrors((prev) =>{
+                            return{...prev, [name]: null}
+                        })
+                    }
+                } else{
+
+                    setErrors((prev)=>{
+                        return {...prev, [name]:null}
+                    })
+                }
             }
             else {
                 setErrors((prev) =>{
