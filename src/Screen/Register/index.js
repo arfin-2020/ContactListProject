@@ -10,8 +10,8 @@ const SignUp = () =>{
      const {authDispatch, authState: {error, loading, data},} = useContext(GlobalContext)
      const {DEV_BACKEND_URL} = envs;
      
-     console.log('Backend url-----', DEV_BACKEND_URL);
-     console.log('__DEV__-----', __DEV__);
+    //  console.log('Backend url-----', DEV_BACKEND_URL);
+    //  console.log('__DEV__-----', __DEV__);
     //  console.log('authDispatch',authDispatch)
     //  console.log('authDispatch------',authState.error)
     // React.useEffect(()=>{

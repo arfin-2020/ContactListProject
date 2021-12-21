@@ -24,6 +24,7 @@ export default ({
         });
     })
     .catch((err)=>{
+        // {console.log(error333333,err)}
         dispatch({
             type: REGISTER_FAIL,   
             payload: err.response 

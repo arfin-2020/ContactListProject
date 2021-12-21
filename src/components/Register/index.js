@@ -41,7 +41,7 @@ const RegisterComponent = ({
                         onChangeText={(value)=>{
                             onChange({name:'userName', value})
                         }}
-                        error={errors.userName || error?.userName?.[0]}
+                        error={errors.userName || error?.username?.[0]}
                     />
 
                     <Input
