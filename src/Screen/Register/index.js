@@ -7,13 +7,13 @@ import { GlobalContext } from '../../context/Provider';
 const SignUp = () =>{
      const [form, setForm] = useState({});
      const [errors, setErrors] = useState({});
-     const {authDispatch, authState: {error, loading, data},} = useContext(GlobalContext)
-     const {DEV_BACKEND_URL} = envs;
+     const {authDispatch, authState:{loading, data, error}} = useContext(GlobalContext)
+    //  const {DEV_BACKEND_URL} = envs;
      
     //  console.log('Backend url-----', DEV_BACKEND_URL);
     //  console.log('__DEV__-----', __DEV__);
     //  console.log('authDispatch',authDispatch)
-    //  console.log('authDispatch------',authState.error)
+    //  console.log('authDispatch------',authState?.error)
     // React.useEffect(()=>{
     //     axiosInstance.post('api/contacts/').catch((error)=>{
     //         console.log('error', error.response);
@@ -76,13 +76,14 @@ const SignUp = () =>{
                 return {...prev, password: 'Please enter password field.'}
             })
         }
-        //  console.log('form---------', form);
+        
          if(Object.values(form).length === 5 &&
             Object.values(form).every((item)=>item.trim().length > 0 ) &&
             Object.values(errors).every((item)=>!item)
          ){
-                // console.log('111',111);
+                console.log('111',111);
                 register(form)(authDispatch)
+                console.log('form---------', form);
                   
          }
         

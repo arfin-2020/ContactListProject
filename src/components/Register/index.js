@@ -9,12 +9,12 @@ import Input from "../common/Input";
 import styles from './styles';
 
 const RegisterComponent = ({ 
-    form,
-    onChange,
-    errors, 
-    error,
-    loading,
-    onSubmit }) => {
+ onSubmit,
+  onChange,
+  form,
+  loading,
+  error,
+  errors, }) => {
 
     const { navigate } = useNavigation();
 
@@ -33,7 +33,7 @@ const RegisterComponent = ({
                 {/* {error?.error && (
             <Message retry danger retryFn={onSubmit} message={error?.error} />
           )} */}
-          {/* {error.error && <Text>{error.error}</Text>} */}
+          {error?.error && <Text>{error?.error}</Text>}
                     <Input
                         label="Username"
                         placeholder='Enter username'
@@ -86,7 +86,7 @@ const RegisterComponent = ({
                         error={errors.password || error?.password?.[0]}
                     />
                     {/* {console.log('error--------', error)} */}
-                    {console.log('errors--------', errors)}
+                    {/* {console.log('errors--------', errors)} */}
                     <CustomeButton 
                     loading={loading} 
                     primary 
