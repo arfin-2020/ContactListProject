@@ -1,4 +1,4 @@
-import { REGISTER_FAIL, REGISTER_LOADING, REGISTER_SUCCESS } from "../actionType";
+import { CLEAR_AUTH_STATE, REGISTER_FAIL, REGISTER_LOADING, REGISTER_SUCCESS } from "../actionType";
 
 const authReducer =  (state,{type, payload}) =>{
 
@@ -20,7 +20,13 @@ const authReducer =  (state,{type, payload}) =>{
             loading: false,
             error: payload,
         };
-        
+        case CLEAR_AUTH_STATE:
+            return{
+            ...state,
+            loading: false,
+            data: null,
+            error:null
+            }
         default:
          return state;
     }

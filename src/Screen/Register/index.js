@@ -1,13 +1,15 @@
-import React, { useContext, useState } from 'react';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import RegisterComponent from '../../components/Register';
-import envs from '../../config/env';
-import register from '../../context/action/auth/register';
+import register, { clearAuthState } from '../../context/action/auth/register';
 import { GlobalContext } from '../../context/Provider';
+import { LOGIN } from '../../context/routeName';
 
 const SignUp = () =>{
      const [form, setForm] = useState({});
      const [errors, setErrors] = useState({});
-     const {authDispatch, authState:{loading, data, error}} = useContext(GlobalContext)
+     const {authDispatch, authState:{loading, data, error}} = useContext(GlobalContext);
+     const {navigate} = useNavigation();
     //  const {DEV_BACKEND_URL} = envs;
      
     //  console.log('Backend url-----', DEV_BACKEND_URL);
@@ -20,10 +22,25 @@ const SignUp = () =>{
     //     });
     // },[]);
 
+    useEffect(()=>{
+        if(data){
+            navigate(LOGIN);
+        }
+    },[data]);
+
+    useFocusEffect(useCallback(()=>{
+        if(data || error){
+            clearAuthState()(authDispatch);
+        }
+        
+    },[data, error])
+    );
      const onChange = ({name, value}) =>{
          
             setForm({...form,[name]: value});
-
+            // console.log('error------',error)
+            // console.log('data------',data)
+            
             if(value !==''){
                 if(name === 'password'){
                     if(value.length < 6){
@@ -81,9 +98,9 @@ const SignUp = () =>{
             Object.values(form).every((item)=>item.trim().length > 0 ) &&
             Object.values(errors).every((item)=>!item)
          ){
-                console.log('111',111);
+                // console.log('111',111);
                 register(form)(authDispatch)
-                console.log('form---------', form);
+                // console.log('form---------', form);
                   
          }
         

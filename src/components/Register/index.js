@@ -33,7 +33,7 @@ const RegisterComponent = ({
                 {/* {error?.error && (
             <Message retry danger retryFn={onSubmit} message={error?.error} />
           )} */}
-          {error?.error && <Text>{error?.error}</Text>}
+                 {error?.error && <Text>{error?.error}</Text>}
                     <Input
                         label="Username"
                         placeholder='Enter username'
